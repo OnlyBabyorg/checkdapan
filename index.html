@@ -1603,7 +1603,7 @@
         },
         {
           q: "53-Hình 10 là tổ chức của:",
-          img: "Hinh10.png",
+          img: "cau53.png",
           o: [
             "a-Thép trước cùng tích",
             "b-Thép pec lit hạt",
@@ -1614,25 +1614,25 @@
         },
         {
           q: "54-Hình 11 là tổ chức của:",
-          img: "Hinh11.png",
+          img: "cau54.png",
           o: ["a-Thép cùng tích", "b-Gang dẻo", "c-Gang cầu", "d-Gang xám"],
           a: 1, // b-Gang dẻo
         },
         {
           q: "55-Hình 12 là tổ chức của:",
-          img: "Hinh12.png",
+          img: "cau55.png",
           o: ["a-Gang cùng tinh", "b-Gang dẻo", "c-Gang cầu", "d-Gang xám"],
           a: 0, // a-Gang cùng tinh
         },
         {
           q: "56-Hình 13 là tổ chức của:",
-          img: "Hinh13.png",
+          img: "cau56.png",
           o: ["a-Thép cùng tích", "b-Gang dẻo", "c-Gang cầu", "d-Gang xám"],
           a: 3, // d-Gang xám
         },
         {
           q: "57-Hình 14 là tổ chức của:",
-          img: "Hinh14.png",
+          img: "cau57.png",
           o: [
             "a-Gang sau cùng tinh",
             "b-Gang trước cùng tinh",
@@ -1643,7 +1643,7 @@
         },
         {
           q: "58-Hình 15 là tổ chức của:",
-          img: "Hinh15.png",
+          img: "cau58.png",
           o: [
             "a-Gang sau cùng tinh",
             "b-Gang trước cùnh tinh",
@@ -1654,7 +1654,7 @@
         },
         {
           q: "59-Hình 16 là tổ chức của:",
-          img: "Hinh16.png",
+          img: "cau59.png",
           o: [
             "a-Gang sau cùng tinh",
             "b-Gang trước cùnh tinh",
@@ -1665,25 +1665,25 @@
         },
         {
           q: "60- Hình 17 là tổ chức:",
-          img: "Hinh17.png",
+          img: "cau60.png",
           o: ["a-peclit", "b-mactenxit", "c-lêđêburit", "d-ferit"],
           a: 1, // b-mactenxit
         },
         {
           q: "61- Hình 18 là tổ chức:",
-          img: "Hinh18.png", // Đây là file ảnh bạn vừa gửi
+          img: "cau61.png", // Đây là file ảnh bạn vừa gửi
           o: ["a-peclit", "b-mactenxit", "c-lêđêburit", "d-ferit"],
           a: 0, // a-peclit (Nhìn hình là dạng tấm song song)
         },
         {
           q: "62- Hình 19 là tổ chức:",
-          img: "Hinh19.png",
+          img: "cau62.png",
           o: ["a-peclit hat", "b-xóocbit", "c-lêđêburit", "d-ferit"],
           a: 0, // a-peclit hat
         },
         {
           q: "63-Hình 20 là tổ chức của:",
-          img: "Hinh20.png",
+          img: "cau63.png",
           o: [
             "a-Gang sau cùng tinh",
             "b-Gang trước cùnh tinh",
@@ -2115,7 +2115,35 @@
         }`;
         document.getElementById("score").innerText = score;
 
-        document.getElementById("qText").innerText = item.q;
+        // --- SỬA ĐỔI QUAN TRỌNG ĐỂ HIỆN ẢNH ---
+        const qDiv = document.getElementById("qText");
+        qDiv.innerHTML = ""; // Xóa nội dung cũ
+
+        // 1. Tạo và hiện câu hỏi (chữ)
+        const textNode = document.createElement("div");
+        textNode.innerText = item.q;
+        qDiv.appendChild(textNode);
+
+        // 2. Kiểm tra xem có ảnh không, nếu có thì tạo thẻ <img>
+        if (item.img && item.img.trim() !== "") {
+          const imgNode = document.createElement("img");
+          imgNode.src = item.img; // Đường dẫn ảnh lấy từ data
+          imgNode.style.maxWidth = "100%"; // Giới hạn chiều rộng ảnh
+          imgNode.style.display = "block"; // Xuống dòng
+          imgNode.style.margin = "15px auto"; // Căn giữa và cách lề
+          imgNode.style.borderRadius = "8px"; // Bo tròn góc cho đẹp
+          imgNode.style.border = "1px solid #ddd"; // Viền mờ
+
+          // Xử lý lỗi nếu ảnh không tìm thấy
+          imgNode.onerror = function () {
+            this.style.display = "none"; // Ẩn đi nếu lỗi ảnh
+            console.log("Không tìm thấy ảnh: " + item.img);
+          };
+
+          qDiv.appendChild(imgNode);
+        }
+        // ----------------------------------------
+
         document.getElementById("feedback").style.display = "none";
         document.getElementById("nextBtn").style.display = "none";
         document.getElementById("explain").innerHTML = "";
@@ -2130,7 +2158,6 @@
           optDiv.appendChild(btn);
         });
       }
-
       function check(selected, correct, btn, item) {
         // Vô hiệu hóa các nút sau khi chọn
         const btns = document.querySelectorAll("#optContainer button");
