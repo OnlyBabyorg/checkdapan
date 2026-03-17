@@ -212,151 +212,152 @@
     <script>
       // DỮ LIỆU CÂU HỎI
       const questions = [
+        // --- CÂU 1: CHU KỲ, TẦN SỐ, TỐC ĐỘ GÓC CƠ BẢN ---
         {
           type: "multi-fill",
-          text: "Một vật có khối lượng $m = 2 \\text{ kg}$ được thả rơi tự do từ độ cao $h = 10 \\text{ m}$ so với mặt đất. Chọn mốc thế năng tại mặt đất. Lấy $g = 10 \\text{ m/s}^2$. Bỏ qua sức cản của không khí. (Chỉ điền số, làm tròn 2 chữ số thập phân nếu có).",
+          text: "Một vật chuyển động tròn đều quay được 120 vòng trong 1 phút. Bán kính quỹ đạo là $R = 50 \\text{ cm}$. Lấy $\\pi = 3.14$. (Chỉ điền số).",
           subQuestions: [
             {
-              text: "a) Cơ năng của vật lúc bắt đầu thả (Đơn vị: J):",
-              correct: ["200"],
-            },
-            {
-              text: "b) Động năng của vật ngay khi vừa chạm đất (Đơn vị: J):",
-              correct: ["200"],
-            },
-            {
-              text: "c) Vận tốc của vật ngay khi vừa chạm đất (Đơn vị: m/s):",
-              correct: ["14.14", "14,14"],
-            },
-          ],
-          explanation:
-            "<b>Giải thích:</b><br>- Cơ năng ban đầu: $W = W_t = mgh = 2 \\times 10 \\times 10 = 200 \\text{ J}$.<br>- Khi chạm đất, toàn bộ thế năng chuyển thành động năng nên $W_đ = W = 200 \\text{ J}$.<br>- Vận tốc: $v = \\sqrt{2gh} = \\sqrt{2 \\times 10 \\times 10} = 10\\sqrt{2} \\approx 14.14 \\text{ m/s}$.",
-        },
-        {
-          type: "fill",
-          text: "Một ô tô có khối lượng 1,5 tấn đang chuyển động thẳng đều trên đường ngang với vận tốc 54 km/h thì người lái xe hãm phanh. Ô tô đi thêm được 20 m thì dừng lại hẳn. Áp dụng định lý biến thiên động năng, hãy tính độ lớn của lực hãm phanh trung bình tác dụng lên ô tô. (Đơn vị: N, chỉ điền số).",
-          correct: ["8437.5", "8437,5"],
-          explanation:
-            "<b>Giải thích:</b> $m = 1500 \\text{ kg}, v_1 = 54 \\text{ km/h} = 15 \\text{ m/s}, v_2 = 0$.<br>Độ biến thiên động năng: $\\Delta W_đ = W_{đ2} - W_{đ1} = 0 - \\frac{1}{2}mv_1^2 = -\\frac{1}{2} \\times 1500 \\times 15^2 = -168750 \\text{ J}$.<br>Công của lực hãm: $A = F_h \\cdot s \\cdot \\cos(180^\\circ) = -F_h \\cdot 20$.<br>Theo định lý biến thiên động năng: $A = \\Delta W_đ \\Rightarrow -20F_h = -168750 \\Rightarrow F_h = 8437.5 \\text{ N}$.",
-        },
-        {
-          type: "multi-fill",
-          text: "Một con lắc lò xo đặt nằm ngang, lò xo có độ cứng $k = 100 \\text{ N/m}$ và vật nặng $m = 250 \\text{ g}$. Kéo vật ra khỏi vị trí cân bằng 5 cm rồi buông nhẹ cho vật dao động. Chọn mốc thế năng tại vị trí cân bằng. Bỏ qua mọi ma sát. Tính động năng và thế năng của vật khi nó đi qua vị trí cách vị trí cân bằng 3 cm. (Chỉ điền số, Đơn vị: J).",
-          subQuestions: [
-            {
-              text: "Thế năng của vật khi $x = 3 \\text{ cm}$:",
-              correct: ["0.045", "0,045"],
-            },
-            {
-              text: "Động năng của vật khi $x = 3 \\text{ cm}$:",
-              correct: ["0.08", "0,08"],
-            },
-          ],
-          explanation:
-            "<b>Giải thích:</b> Biên độ $A = 5 \\text{ cm} = 0.05 \\text{ m}$, $x = 3 \\text{ cm} = 0.03 \\text{ m}$.<br>- Cơ năng: $W = \\frac{1}{2}kA^2 = 0.5 \\times 100 \\times 0.05^2 = 0.125 \\text{ J}$.<br>- Thế năng tại $x = 0.03 \\text{ m}$: $W_t = \\frac{1}{2}kx^2 = 0.5 \\times 100 \\times 0.03^2 = 0.045 \\text{ J}$.<br>- Động năng: $W_đ = W - W_t = 0.125 - 0.045 = 0.08 \\text{ J}$.",
-        },
-        {
-          type: "multi-fill",
-          text: "Một viên đạn khối lượng 20 g đang bay với vận tốc 600 m/s xuyên qua một tấm gỗ dày, sau khi xuyên qua vận tốc giảm còn 200 m/s. (Chỉ điền số, không ghi đơn vị).",
-          subQuestions: [
-            {
-              text: "a) Động lượng ban đầu của viên đạn (kg.m/s):",
-              correct: ["12"],
-            },
-            {
-              text: "b) Độ lớn độ biến thiên động lượng của viên đạn (kg.m/s):",
-              correct: ["8", "-8"],
-            },
-          ],
-          explanation:
-            "<b>Giải thích:</b> $m = 20 \\text{ g} = 0.02 \\text{ kg}$.<br>- Động lượng ban đầu: $p_1 = mv_1 = 0.02 \\times 600 = 12 \\text{ kg.m/s}$.<br>- Động lượng sau: $p_2 = mv_2 = 0.02 \\times 200 = 4 \\text{ kg.m/s}$.<br>- Độ biến thiên động lượng: $\\Delta p = p_2 - p_1 = 4 - 12 = -8 \\text{ kg.m/s}$. Độ lớn là $8 \\text{ kg.m/s}$.",
-        },
-        {
-          type: "multi-fill",
-          text: "Một quả bóng khối lượng 400 g bay với vận tốc 15 m/s đến đập vuông góc vào một bức tường cứng rồi bật trở lại theo phương cũ với vận tốc 10 m/s. Thời gian va chạm là 0,05 s. Chọn chiều dương là chiều bật lại. (Chỉ điền số).",
-          subQuestions: [
-            {
-              text: "a) Độ biến thiên động lượng của quả bóng (kg.m/s):",
-              correct: ["10"],
-            },
-            {
-              text: "b) Lực cản trung bình do tường tác dụng lên quả bóng (N):",
-              correct: ["200"],
-            },
-          ],
-          explanation:
-            "<b>Giải thích:</b> $m = 0.4 \\text{ kg}$. Chọn chiều dương là chiều bật lại $\\Rightarrow v_1 = -15 \\text{ m/s}, v_2 = 10 \\text{ m/s}$.<br>- Độ biến thiên động lượng: $\\Delta p = mv_2 - mv_1 = 0.4(10 - (-15)) = 0.4 \\times 25 = 10 \\text{ kg.m/s}$.<br>- Lực cản trung bình: $F = \\frac{\\Delta p}{\\Delta t} = \\frac{10}{0.05} = 200 \\text{ N}$.",
-        },
-        {
-          type: "multi-fill",
-          text: "Một hệ gồm hai vật: vật $m_1 = 2 \\text{ kg}$ chuyển động với $v_1 = 4 \\text{ m/s}$ và $m_2 = 3 \\text{ kg}$ chuyển động với $v_2 = 2 \\text{ m/s}$. Tính độ lớn động lượng của hệ (kg.m/s) trong các trường hợp sau (Chỉ điền số):",
-          subQuestions: [
-            {
-              text: "a) Hai vật chuyển động song song, cùng chiều:",
-              correct: ["14"],
-            },
-            {
-              text: "b) Hai vật chuyển động song song, ngược chiều:",
+              text: "a) Tần số của vật (Đơn vị: Hz):",
               correct: ["2"],
             },
             {
-              text: "c) Hai vật chuyển động theo hai hướng vuông góc với nhau:",
-              correct: ["10"],
+              text: "b) Chu kỳ của vật (Đơn vị: s):",
+              correct: ["0.5", "0,5"],
+            },
+            {
+              text: "c) Tốc độ góc của vật (Đơn vị: rad/s):",
+              correct: ["12.56", "12,56"],
             },
           ],
-          explanation:
-            "<b>Giải thích:</b> $p_1 = m_1v_1 = 8 \\text{ kg.m/s}$; $p_2 = m_2v_2 = 6 \\text{ kg.m/s}$.<br>- Cùng chiều: $p = p_1 + p_2 = 8 + 6 = 14$.<br>- Ngược chiều: $p = |p_1 - p_2| = |8 - 6| = 2$.<br>- Vuông góc: $p = \\sqrt{p_1^2 + p_2^2} = \\sqrt{8^2 + 6^2} = 10$.",
+          explanation: "",
         },
-        {
-          type: "fill",
-          text: "Một toa xe có khối lượng 3 tấn đang chạy trên đường ray thẳng nằm ngang với vận tốc 4 m/s đến va chạm vào một toa xe khác có khối lượng 5 tấn đang đứng yên. Sau va chạm, hai toa xe móc vào nhau và cùng chuyển động. Bỏ qua ma sát. Tính vận tốc của hai toa xe ngay sau va chạm. (Đơn vị: m/s, chỉ điền số).",
-          correct: ["1.5", "1,5"],
-          explanation:
-            "<b>Giải thích:</b> Áp dụng định luật bảo toàn động lượng cho va chạm mềm:<br>$m_1v_1 + m_2v_2 = (m_1 + m_2)V$<br>$\\Rightarrow 3000 \\times 4 + 0 = (3000 + 5000)V$<br>$\\Rightarrow 12000 = 8000V \\Rightarrow V = 1.5 \\text{ m/s}$.",
-        },
+
+        // --- CÂU 2: VẬN TỐC DÀI, GIA TỐC HƯỚNG TÂM ---
         {
           type: "multi-fill",
-          text: "Một viên đạn khối lượng $m = 20 \\text{ g}$ bay theo phương ngang với $v_0 = 400 \\text{ m/s}$ găm vào một bao cát khối lượng $M = 1.98 \\text{ kg}$ đang treo lơ lửng. Sau va chạm đạn nằm yên trong bao cát. (Chỉ điền số).",
+          text: "Một điểm trên vành bánh xe bán kính $R = 40 \\text{ cm}$ đang quay đều với tốc độ góc $\\omega = 10 \\text{ rad/s}$. Bỏ qua sai số. (Chỉ điền số).",
           subQuestions: [
             {
-              text: "a) Vận tốc của hệ (bao cát + đạn) ngay sau va chạm (m/s):",
+              text: "a) Vận tốc dài của điểm đó (Đơn vị: m/s):",
               correct: ["4"],
             },
             {
-              text: "b) Phần động năng của hệ đã chuyển hóa thành nhiệt năng (J):",
-              correct: ["1584"],
+              text: "b) Gia tốc hướng tâm của điểm đó (Đơn vị: m/s²):",
+              correct: ["40"],
+            },
+            {
+              text: "c) Quãng đường điểm đó vạch ra được sau 5 giây (Đơn vị: m):",
+              correct: ["20"],
             },
           ],
-          explanation:
-            "<b>Giải thích:</b> $m = 0.02 \\text{ kg}$.<br>- Bảo toàn động lượng: $m \\cdot v_0 = (m + M)V \\Rightarrow 0.02 \\times 400 = 2 \\times V \\Rightarrow V = 4 \\text{ m/s}$.<br>- Động năng trước va chạm: $W_{đ1} = \\frac{1}{2}mv_0^2 = 0.5 \\times 0.02 \\times 400^2 = 1600 \\text{ J}$.<br>- Động năng sau va chạm: $W_{đ2} = \\frac{1}{2}(m+M)V^2 = 0.5 \\times 2 \\times 4^2 = 16 \\text{ J}$.<br>- Nhiệt năng: $Q = W_{đ1} - W_{đ2} = 1600 - 16 = 1584 \\text{ J}$.",
+          explanation: "",
         },
-        {
-          type: "fill",
-          text: "Một viên đất sét khối lượng 200 g bay ngang với vận tốc 5 m/s hướng sang Đông đến va chạm và dính vào một viên đất sét khác 300 g đang bay 4 m/s hướng lên phía Bắc. Xác định ĐỘ LỚN vận tốc của hệ sau khi dính vào nhau (m/s). (Làm tròn 2 chữ số thập phân, chỉ điền số).",
-          correct: ["3.12", "3,12", "3.124", "3,124"],
-          explanation:
-            "<b>Giải thích:</b> $m_1 = 0.2 \\text{ kg}, p_1 = 0.2 \\times 5 = 1 \\text{ kg.m/s}$ (Đông).<br>$m_2 = 0.3 \\text{ kg}, p_2 = 0.3 \\times 4 = 1.2 \\text{ kg.m/s}$ (Bắc).<br>Vì hai hướng vuông góc nên $p_{hệ} = \\sqrt{p_1^2 + p_2^2} = \\sqrt{1^2 + 1.2^2} = \\sqrt{2.44} \\approx 1.562 \\text{ kg.m/s}$.<br>Vận tốc hệ: $V = \\frac{p_{hệ}}{m_1 + m_2} = \\frac{1.562}{0.5} \\approx 3.12 \\text{ m/s}$.",
-        },
+
+        // --- CÂU 3: BÀI TOÁN KIM ĐỒNG HỒ ---
         {
           type: "multi-fill",
-          text: "Một vật nhỏ $m_1 = 1 \\text{ kg}$ trượt không vận tốc đầu từ đỉnh mặt phẳng nghiêng cao $h = 1.8 \\text{ m}$ xuống chân dốc. Bỏ qua ma sát, $g = 10 \\text{ m/s}^2$. Vừa đến chân dốc (mặt phẳng ngang), nó va chạm mềm với vật $m_2 = 2 \\text{ kg}$ đang đứng yên. (Chỉ điền số).",
+          text: "Xét các kim của một chiếc đồng hồ treo tường đang hoạt động bình thường. (Chỉ điền số).",
           subQuestions: [
             {
-              text: "a) Vận tốc của vật $m_1$ khi vừa đến chân dốc (m/s):",
-              correct: ["6"],
+              text: "a) Chu kỳ quay của kim phút (Đơn vị: s):",
+              correct: ["3600"],
             },
             {
-              text: "b) Vận tốc của hai vật ngay sau va chạm mềm (m/s):",
-              correct: ["2"],
+              text: "b) Tỉ số tốc độ góc giữa kim phút và kim giờ ($\\frac{\\omega_p}{\\omega_h}$):",
+              correct: ["12"],
             },
             {
-              text: "c) Độ cao cực đại mà hệ hai vật đạt được nếu trượt lên mặt phẳng nghiêng thứ 2 (m):",
-              correct: ["0.2", "0,2"],
+              text: "c) Tỉ số tốc độ góc giữa kim giây và kim phút ($\\frac{\\omega_s}{\\omega_p}$):",
+              correct: ["60"],
             },
           ],
-          explanation:
-            "<b>Giải thích:</b><br>- Bảo toàn cơ năng cho $m_1$ trượt xuống: $\\frac{1}{2}m_1v_1^2 = m_1gh \\Rightarrow v_1 = \\sqrt{2gh} = \\sqrt{2 \\times 10 \\times 1.8} = 6 \\text{ m/s}$.<br>- Bảo toàn động lượng khi va chạm mềm: $m_1v_1 = (m_1 + m_2)V \\Rightarrow 1 \\times 6 = (1 + 2)V \\Rightarrow V = 2 \\text{ m/s}$.<br>- Bảo toàn cơ năng khi hệ trượt lên dốc mới: $\\frac{1}{2}(m_1+m_2)V^2 = (m_1+m_2)gh_{max} \\Rightarrow h_{max} = \\frac{V^2}{2g} = \\frac{4}{20} = 0.2 \\text{ m}$.",
+          explanation: "",
         },
+
+        // --- CÂU 4: BÀI TOÁN TRUYỀN ĐỘNG (ĐỘNG CƠ) ---
+        {
+          type: "multi-fill",
+          text: "Trục của một động cơ điện quay với tốc độ 3000 vòng/phút. Nó được gắn với một puli có bán kính $R = 10 \\text{ cm}$. Lấy $\\pi = 3.14$. (Chỉ điền số, làm tròn 1 chữ số thập phân).",
+          subQuestions: [
+            {
+              text: "a) Tần số quay của trục động cơ (Đơn vị: Hz):",
+              correct: ["50"],
+            },
+            {
+              text: "b) Tốc độ góc của trục động cơ (Đơn vị: rad/s):",
+              correct: ["314"],
+            },
+            {
+              text: "c) Tốc độ dài của một điểm trên vành puli (Đơn vị: m/s):",
+              correct: ["31.4", "31,4"],
+            },
+          ],
+          explanation: "",
+        },
+
+        // --- CÂU 5: TRÁI ĐẤT TỰ QUAY ---
+        {
+          type: "multi-fill",
+          text: "Xem Trái Đất là một hình cầu bán kính $R = 6400 \\text{ km}$, quay đều quanh trục với chu kỳ $T = 24 \\text{ giờ}$. Lấy $\\pi = 3.14$. (Chỉ điền số, làm tròn đến phần nguyên).",
+          subQuestions: [
+            {
+              text: "a) Tốc độ dài của một điểm nằm trên Xích đạo (Đơn vị: km/h):",
+              correct: ["1675"],
+            },
+            {
+              text: "b) Quãng đường một điểm trên Xích đạo vạch ra trong 1 giờ (Đơn vị: km):",
+              correct: ["1675"],
+            },
+            {
+              text: "c) Tỉ số tốc độ dài của điểm trên Xích đạo so với điểm ở vĩ độ 60 độ (Biết $R_{60} = \\frac{R}{2}$):",
+              correct: ["2"],
+            },
+          ],
+          explanation: "",
+        },
+
+        // --- CÂU 6: QUÁ TRÌNH QUAY & GÓC QUÉT ---
+        {
+          type: "multi-fill",
+          text: "Một quạt trần quay đều với tốc độ góc $\\omega = 10\\pi \\text{ rad/s}$. Chiều dài từ trục đến mũi cánh quạt là $0.8 \\text{ m}$. Lấy $\\pi^2 = 10, \\pi = 3.14$. (Chỉ điền số).",
+          subQuestions: [
+            {
+              text: "a) Số vòng quạt quay được trong thời gian 2 giây (Đơn vị: vòng):",
+              correct: ["10"],
+            },
+            {
+              text: "b) Tốc độ dài ở mũi cánh quạt (Đơn vị: m/s):",
+              correct: ["25.12", "25,12"],
+            },
+            {
+              text: "c) Gia tốc hướng tâm ở mũi cánh quạt (Đơn vị: m/s²):",
+              correct: ["800"],
+            },
+          ],
+          explanation: "",
+        },
+
+        // --- CÂU 7: TỔNG HỢP XE ĐẠP (LIÊN KẾT ĐỘNG HỌC) ---
+        {
+          type: "multi-fill",
+          text: "Một chiếc xe đạp đang chạy thẳng đều với vận tốc $36 \\text{ km/h}$. Bán kính lốp xe là $0.5 \\text{ m}$. Bỏ qua sự trượt giữa lốp xe và mặt đường. Lấy $\\pi = 3.14$. (Chỉ điền số).",
+          subQuestions: [
+            {
+              text: "a) Tốc độ dài của một điểm trên vành lốp xe so với trục bánh xe (Đơn vị: m/s):",
+              correct: ["10"],
+            },
+            {
+              text: "b) Tốc độ góc của bánh xe (Đơn vị: rad/s):",
+              correct: ["20"],
+            },
+            {
+              text: "c) Số vòng bánh xe quay được trong 31.4 giây (Đơn vị: vòng):",
+              correct: ["100"],
+            },
+          ],
+          explanation: "",
+        }
       ];
 
       // LOGIC XỬ LÝ
